@@ -18,15 +18,15 @@ export default function Home() {
     <div className="w-screen h-screen">
       {/* Header that's like "Shooting Stars" */}
       <div className="pl-8 pt-8 text-[#a7b68d]">
-        <h1 className="text-6xl">Moo's Shooting Stars</h1>
+        <h1 className="text-6xl">Moo&apos;s Shooting Stars</h1>
         <div className="mt-4" />
         <p className="text-sm">
-          A list of all of the shooting stars that moo's GIM can access at the
-          moment.
+          A list of all of the shooting stars that moo&apos;s GIM can access at
+          the moment.
         </p>
         <p className="text-sm">
-          I'm too lazy to make this accessible to everyone else, but maybe I can
-          later on?
+          I&apos;m too lazy to make this accessible to everyone else, but maybe
+          I can later on?
         </p>
       </div>
 

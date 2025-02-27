@@ -3,14 +3,21 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 import time
-import pprint
 from flask_cors import CORS
 import os
 import json
 
 app = Flask(__name__)
 CORS(app)
+
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
 def write_to_json_file(all_locations):
     if not all_locations:
@@ -100,14 +107,9 @@ def scrape_data():
                     "prif world",
                     "Agility Pyramid mine",
                     "shayzien mines",
-                    "Mage of Zamorak mine (lvl 7 Wildy)"
+                    "Mage of Zamorak mine (lvl 7 Wildy)",
                     ]
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-gpu")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    driver = webdriver.Chrome(service=Service(), options=chrome_options)
+    
     f2p_src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAVFBMVEUAAADo6Ojh4eHc3NzY2NjQ0NDNzc3Ly8vHx8fCwsK+vr64uLi0tLSzs7OsrKyrq6ulpaWgoKCfn5+ZmZmXl5eRkZGOjo6Li4uFhYV/f390dHQ4JBg+AiwvAAAAAXRSTlMAQObYZgAAAIVJREFUeNpdT9sWwjAIo1qoA2zdzV3y///pcVt3nHkBckICRBsAgH6BsPwTM66zDhcJQtNWCTaExm3vCDGGqKrMEu83BmHKjbqymKmkF4gw9cVEPPtD+80Hb2fx4knH6svsxSUNNRhsXWYp5yXQdn6K9mvdsDwugLfrwcC6rxg+VuJ4fa8f8JkKodx5cm0AAAAASUVORK5CYII="
 
     try:
@@ -140,8 +142,6 @@ def scrape_data():
         return jsonify(data)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-    finally:
-        driver.quit()
         
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
