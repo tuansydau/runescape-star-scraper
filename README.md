@@ -11,13 +11,13 @@ There are two parts to run: the frontend and the backend. This assumes that you 
 
 ### Frontend
 
-1. After cloning the repository, go into `runescape-stars/` and run `npm i`.
+1. After cloning the repository, go into `runescape-star-tracker/` and run `npm i`.
 2. If you are running this locally, you can run `npm run dev`, and the frontend should be working.
 3. If you are hosting this, run `npm run build` and then `npm start`.
 
 If your server does not have sufficient resources to build the project on the serverside you can run: 
 1. Run `npm run build` on your local machine.
-2. Run `scp -r .next [username]@[server_ip_address]:/destination/runescape-stars` on your local machine.
+2. Run `scp -r .next [username]@[server_ip_address]:/destination/runescape-star-tracker` on your local machine.
 3. Run `npm start` on your server.
 
 ### Backend
