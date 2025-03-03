@@ -1,6 +1,6 @@
 # Star Tracker
 
-This is a web app that scrapes all existing shooting stars in Runescape detected with the shooting-stars plugin, and then filters out the star locations I hate the most. This app is what I used to get [my main account](https://oldschool.runescape.wiki/w/Money_making_guide/Mining_crashed_stars) to 99 mining, and [my group ironman](https://wiseoldman.net/players/moo%20has%20fren) to 93. The timesave from ignoring certain star locations (eg, wilderness ones) barely made it possible for me to play games like Valorant and League while also mining stars on OSRS.
+This is a web app that scrapes all existing [shooting stars](https://oldschool.runescape.wiki/w/Money_making_guide/Mining_crashed_stars) in Runescape detected with the shooting-stars plugin, and then filters out the star locations I hate the most. This app is what I used to get [my main account](https://wiseoldman.net/players/moo%20shu%20pork) to 99 mining, and [my group ironman](https://wiseoldman.net/players/moo%20has%20fren) to 93. The timesave from ignoring certain star locations (eg, wilderness ones) barely made it possible for me to play games like Valorant and League while also mining stars on OSRS.
 
 ## Demo
 <img width="753" alt="image" src="https://github.com/user-attachments/assets/e85f4105-3280-44db-b23e-b02ed613acd5" />
