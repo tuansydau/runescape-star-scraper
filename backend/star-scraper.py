@@ -4,6 +4,8 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.core.os_manager import ChromeType
+# from selenium.webdriver.chrome.service import Service as ChromiumService
 import time
 from flask_cors import CORS
 import os
@@ -17,7 +19,11 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
+# chrome_options.binary_location = '/usr/bin/chrome/chromium-browser'  # Update the path to your Chrome installation if needed
+# chromedriver_path = '/usr/local/bin/chromedriver'  # Update this path based on your installation
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+# driver = webdriver.Chrome(service=ChromiumService(executable_path=chromedriver_path), options=chrome_options)
+
 
 def write_to_json_file(all_locations):
     if not all_locations:
