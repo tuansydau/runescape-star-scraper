@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Star Tracker
 
-## Getting Started
+This is a web app that scrapes all existing shooting stars in Runescape detected with the shooting-stars plugin, and then filters out the star locations I hate the most. This app is what I used to get [my main account](https://oldschool.runescape.wiki/w/Money_making_guide/Mining_crashed_stars) to 99 mining, and [my group ironman](https://wiseoldman.net/players/moo%20has%20fren) to 93. 
 
-First, run the development server:
+## Demo
+<img width="753" alt="image" src="https://github.com/user-attachments/assets/e85f4105-3280-44db-b23e-b02ed613acd5" />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Setup
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+There are two parts to run: the frontend and the backend. This assumes that you have a chromium-based browser installed on your machine.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. After cloning the repository, go into `runescape-stars/` and run `npm i`.
+2. If you are running this locally, you can run `npm run dev`, and the frontend should be working.
+3. If you are hosting this, run `npm run build` and then `npm start`.
 
-## Learn More
+If your server does not have sufficient resources to build the project on the serverside you can run: 
+1. Run `npm run build` on your local machine.
+2. Run `scp -r .next [username]@[server_ip_address]:/destination/runescape-stars` on your local machine.
+3. Run `npm start` on your server.
 
-To learn more about Next.js, take a look at the following resources:
+### Backend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Go into the `/backend` folder
+2. Run `pip install -r requirements.txt`
+3. Run `python star-scraper.py`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Startup should take around 15 seconds, as it needs to download the right chromedriver for your browser on server startup.
 
-## Deploy on Vercel
+## Using
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Go to your browser and navigate to `localhost:3000` to use. If you'd like to change your block list, you can change the `ignore_list` variable in backend/star-scraper.py @ line 48 and enter the locations you wouldn't like to see.
