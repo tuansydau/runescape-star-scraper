@@ -26,8 +26,8 @@ If your server does not have sufficient resources to build the project on the se
 2. Run `pip install -r requirements.txt`
 3. Run `python star-scraper.py`
 
-Startup should take around 15 seconds, as it needs to download the right chromedriver for your browser on server startup.
+Startup should take around 15+ seconds, depending on internet speed, as it needs to download the right chromedriver for your browser on server startup.
 
-## Using
+## Usage
 
 Go to your browser and navigate to `localhost:3000` to use. If you'd like to change your block list, you can change the `ignore_list` variable in backend/star-scraper.py @ line 48 and enter the locations you wouldn't like to see.
